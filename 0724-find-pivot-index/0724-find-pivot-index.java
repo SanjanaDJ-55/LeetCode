@@ -1,21 +1,19 @@
 class Solution {
     public int pivotIndex(int[] nums) {
-        //rightSum=0 leftsum = totalsum-nums[i]-rightsum
-        int rightSum =0;
-        int totalSum=0;
-        int leftSum=0;
-        for (int num:nums){
-            totalSum+=num;
+        int leftsum = 0;
+        int totalsum = 0;
+        for(int element:nums){
+            totalsum+=element;
         }
         for(int i=0;i<nums.length;i++){
-            rightSum=totalSum-nums[i]-leftSum;
-        if(rightSum==leftSum){
-            return i;
-        }
-        leftSum+=nums[i];
-            
+
+            int rightsum = totalsum-leftsum-nums[i];
+
+            if(leftsum==rightsum){
+                return i;
+            }
+            leftsum+=nums[i];
         }
         return -1;
-        
     }
 }
