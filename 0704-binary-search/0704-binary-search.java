@@ -1,17 +1,10 @@
 class Solution {
     public int search(int[] nums, int target) {
-        int l=0;
-        int r = nums.length-1;
-        while(l<=r){
-            int mid = l+((r-l)/2);
-            if(target == nums[mid]){
-                return mid;
-            }
-            else if(target>nums[mid]){
-                l =mid + 1;
-            }
-            else{
-                r = mid-1;
+        //linear search algorithm
+        int n =nums.length;
+        for(int i =0;i<=n-1;i++){
+            if(target == nums[i]){
+                return i;
             }
         }
         return -1;
