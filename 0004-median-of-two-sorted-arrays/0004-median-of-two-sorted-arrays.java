@@ -14,18 +14,15 @@ class Solution {
         int r = n-1;
         int mid = l+(r-l)/2;
         float sum = 0;
-        for(int i =0;i<merged.length;i++){
+        
             if(n%2!=0){
                 return merged[mid];
             }
             else{
-                sum =(float)(merged[mid]+merged[mid+1])/2;
-                return sum;
+                return (merged[mid]+merged[mid+1])/2.0;
+
             }
 
-
-        }
-        return 0.0;
 
         
     }
