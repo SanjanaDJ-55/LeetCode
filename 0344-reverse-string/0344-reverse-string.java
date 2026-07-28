@@ -4,7 +4,6 @@ class Solution {
         int right = s.length - 1;
 
         while (left < right) {
-            // swap
             char temp = s[left];
             s[left] = s[right];
             s[right] = temp;
