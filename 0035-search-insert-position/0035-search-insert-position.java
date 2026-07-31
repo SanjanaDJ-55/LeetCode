@@ -13,12 +13,7 @@ class Solution {
             else {
                 r = m -1;
             }
-            if(target>nums[m]){
-                m = r +1;
-            }
-            else{
-                m = l+1;
-            }
+           
         }
         return l;
         
