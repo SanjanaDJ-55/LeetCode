@@ -1,18 +1,20 @@
 class Solution {
     public int search(int[] nums, int target) {
-        int l =0;
-        int r = nums.length-1;
-        while(l<=r){
-        int m = l+(r-l)/2;
-        if(target == nums[m]){
-            return m;
-        }
-        else if(target > nums[m]){
-            l = m+1;
-        }
-        else{
-            r = m -1;
-        }
+        //binary search
+        int i =0;
+        int j =nums.length-1;
+        while(i<=j){
+            int m = i+(j-i)/2;
+            if(target==nums[m]){
+                return m;
+                
+            }
+            else if(target<nums[m]){
+                j=m-1;
+            }
+            if(target>nums[m]){
+               i=m+1;
+            }
         }
         return -1;
     }
