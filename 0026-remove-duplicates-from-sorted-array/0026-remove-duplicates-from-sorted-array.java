@@ -1,19 +1,14 @@
-import java.util.HashSet;
-
 class Solution {
     public int removeDuplicates(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
+        int j = 1;
 
-        int index = 0;
-
-        for (int num : nums) {
-            if (!set.contains(num)) {
-                set.add(num);
-                nums[index] = num;
-                index++;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[j] = nums[i];
+                j++;
             }
         }
 
-        return index;
+        return j;
     }
 }
