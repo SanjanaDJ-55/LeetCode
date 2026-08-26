@@ -15,7 +15,7 @@ class Solution {
                 j=m-1;
             }
         }
-        return j+1;
+        return i;
        
         }
         
