@@ -1,21 +1,21 @@
 class Solution {
     public boolean isPerfectSquare(int num) {
-        int l =1;
-        int r = num;
-        while(l<=r){
-            int mid = l+(r-l)/2;
-            long sqrt = (long)mid*mid;
-            if(sqrt == num){
-                return true;
-            }
-            else if(sqrt > num){
-                r = mid -1;
-            }
-            else{
-                l = mid +1 ;
-            }
+       int i =1;
+       int j = num;
+       while(i<=j){
+        int m = i+(j-i)/2;
+        long sqrt = (long)m*m;
+        if(num == sqrt){
+            return true;
         }
-        return false;
+        else if(num>sqrt){
+            i = m+1;
+        }
+        else{
+            j=m-1;
+        }
+       }
+       return false;
     }
 }
 
