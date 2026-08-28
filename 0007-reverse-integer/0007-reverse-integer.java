@@ -1,36 +1,29 @@
+
 class Solution {
     public int reverse(int x) {
-        boolean negative = x < 0;
 
-        // Convert to positive safely using long
-        long num = Math.abs((long) x);
+        int rev = 0;
 
-        // Store digits in an array
-        int[] arr = new int[10];
-        int i = 0;
+        while (x != 0) {
 
-        while (num > 0) {
-            arr[i] = (int)(num % 10);
-            num = num / 10;
-            i++;
+            int digit = x % 10;
+            x = x / 10;
+
+            // Check overflow before multiplying by 10
+            if (rev > Integer.MAX_VALUE / 10 ||
+                (rev == Integer.MAX_VALUE / 10 && digit > 7)) {
+                return 0;
+            }
+
+            if (rev < Integer.MIN_VALUE / 10 ||
+                (rev == Integer.MIN_VALUE / 10 && digit < -8)) {
+                return 0;
+            }
+
+            rev = rev * 10 + digit;
         }
 
-        // Build reversed number
-        long reverse = 0;
-
-        for (int j = 0; j < i; j++) {
-            reverse = reverse * 10 + arr[j];
-        }
-
-        if (negative) {
-            reverse = -reverse;
-        }
-
-        // LeetCode requires 0 if overflow occurs
-        if (reverse > Integer.MAX_VALUE || reverse < Integer.MIN_VALUE) {
-            return 0;
-        }
-
-        return (int) reverse;
+        return rev;
     }
 }
+
