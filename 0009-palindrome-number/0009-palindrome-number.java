@@ -1,23 +1,17 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        if(x == 0 || x==1){
-            return true; 
-        }
-        if (x < 0) {
+       String s = String.valueOf(x);
+       int n  = s.length();
+       int i =0;
+       int j =n-1;
+       while(i<=j){
+        if(s.charAt(i)!=s.charAt(j)){
             return false;
         }
-        int rev = 0;
-        int og = x;
-        while (x != 0) {
-            rev = rev * 10 + x % 10;
-            x = x / 10;
-            if (og == rev) {
-                return true;
-            }
-            
-        }
-
-        return false;
-
+        i++;
+        j--;
+       }
+       return true;
     }
+
 }
