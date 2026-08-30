@@ -4,7 +4,7 @@ class Solution {
        int rev = 0;
        while(x!=0){
        int rem = x%10;
-        x/=10;
+      
        if(rev >Integer.MAX_VALUE/10 || rev == Integer.MAX_VALUE/10      && rem> 7 ){
         return 0;
        }
@@ -13,6 +13,7 @@ class Solution {
         return 0;
        }
        rev = rev*10+rem;
+         x/=10;
       
        }
        return rev;
