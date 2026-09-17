@@ -22,8 +22,5 @@ class Solution {
                 return (merged[mid]+merged[mid+1])/2.0;
 
             }
-
-
-        
     }
 }
