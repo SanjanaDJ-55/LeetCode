@@ -11,20 +11,17 @@
 class Solution {
     public ListNode reverseList(ListNode head) {
 
-        // Base case
-        if (head == null || head.next == null) {
-            return head;
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+
+            ListNode next = curr.next;  // save next node
+            curr.next = prev;           // reverse the link
+            prev = curr;                // move prev forward
+            curr = next;                // move curr forward
         }
 
-        // Reverse the rest of the list
-        ListNode newHead = reverseList(head.next);
-
-        // Put current node after the next node
-        head.next.next = head;
-
-        // Break the old connection
-        head.next = null;
-
-        return newHead;
+        return prev;
     }
 }
