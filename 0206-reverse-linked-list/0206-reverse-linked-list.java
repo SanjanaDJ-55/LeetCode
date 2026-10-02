@@ -16,10 +16,10 @@ class Solution {
 
         while (curr != null) {
 
-            ListNode next = curr.next;  // save next node
-            curr.next = prev;           // reverse the link
-            prev = curr;                // move prev forward
-            curr = next;                // move curr forward
+            ListNode next = curr.next; // save next node
+            curr.next = prev; // reverse the link
+            prev = curr; // move prev forward
+            curr = next; // move curr forward
         }
 
         return prev;
